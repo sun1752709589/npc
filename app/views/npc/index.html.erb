@@ -1,0 +1,40 @@
+<h1 align="center">基本数据</h1>
+<p align="center"><span>总人数：<%=Person.count%>;</span><span>总男人数：<%=Person.where('gender=?','Male').count%>;</span><span>总女人数：<%=Person.where('gender=?','Female').count%>;</span></p>
+</br>
+</br>
+<h1 align="center">按性别分：</h1>
+<%= pie_chart Person.group(:gender_cn).count.select{|_,v| v >5 }%>
+</br>
+</br>
+<h1 align="center">按民族分：</h1>
+<%= pie_chart Person.group(:ethnicity_cn).count.select{|_,v| v >5 }%>
+</br>
+</br>
+<h1 align="center">按地区分：</h1>
+<%= pie_chart Person.group(:birth_place_cn).count.select{|_,v| v >5 }%>
+</br>
+</br>
+<h1 align="center">按党派分：</h1>
+<%= pie_chart Person.group(:partisan_cn).count.select{|_,v| v >5 }%></br>
+</br>
+</br>
+<h1 align="center">按出生年月分：</h1>
+<%= pie_chart Person.group(:generation_cn).count.select{|_,v| v >5 }%>
+</br>
+</br>
+<h1 align="center">按方位(东南西北)分：</h1>
+<%= pie_chart Person.group(:region_cn).count.select{|_,v| v >5 }%>
+</br>
+</br>
+<h1 align="center">按所学学科分：</h1>
+<%= pie_chart Person.group(:major_cn).count.select{|_,v| v >5 }%>
+</br>
+</br>
+<h1 align="center">按学历分：</h1>
+<%= pie_chart Person.group(:educational_background_cn).count.select{|_,v| v >5 }%>
+</br>
+</br>
+<h1 align="center">按是否国外留学分：</h1>
+<%= pie_chart Person.group(:ever_studied_abroad_cn).count.select{|_,v| v >5 }%>
+</br>
+</br>
