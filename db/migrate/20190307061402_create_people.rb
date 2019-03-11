@@ -1,6 +1,7 @@
 class CreatePeople < ActiveRecord::Migration[5.2]
   def change
     create_table :people do |t|
+      t.integer :which_session
       t.string :delegation
       t.string :partisan
       t.string :partisan_cn
